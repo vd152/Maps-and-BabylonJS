@@ -1,1 +1,1 @@
-### Google MAps and BabylonJS
+### Maps and BabylonJS
