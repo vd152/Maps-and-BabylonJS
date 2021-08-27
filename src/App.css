@@ -6,7 +6,45 @@
   height: 40vmin;
   pointer-events: none;
 }
+.map-container, .mapboxgl-canvas-container{
+  height: 100vh;
+}
+.mapboxgl-canvas{
+  height: 100vh !important;
+}
 
+.sidebar {
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  font-family: monospace;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  border-radius: 4px;
+}
+.capture-button{
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #fff;
+  outline: none;
+  padding: 10px 12px;
+  font-family: monospace;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  margin: 12px;
+  border: none;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.capture-button:hover{
+  box-shadow: 2px 0px 24px -5px rgba(35,55,75,0.75);
+  padding: 12px 14px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
