@@ -74,6 +74,23 @@
 #my-canvas{
   height: 100vh;width: 100vw;
 }
+.capture-button img, .capture-link img{
+  height: 50px;width: 50px;
+}
+@media (max-width: 768px){
+  .mapboxgl-ctrl-top-right{
+    top: 50px;
+    width: 97% ;
+  }
+  .sidebar{
+    margin: 12px auto;
+    width: -webkit-fill-available;
+    left: auto;
+  }
+  .capture-button img, .capture-link img{
+    height: 30px;width: 30px;
+  }
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

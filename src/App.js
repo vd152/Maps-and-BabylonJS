@@ -29,17 +29,13 @@ class App extends React.Component {
               }}
             >
               <img
-                src="/captureWhite.png"
-                height="50"
-                width="50"
-                alt="capture"
+                src="/captureWhite.png" 
+                alt="arrow"
               />
             </button>
             <Link href="/view" className="capture-link link-right">
               <img
                 src="/arrow-right.png"
-                height="50"
-                width="50"
                 alt="capture"
               />
             </Link>
@@ -48,7 +44,7 @@ class App extends React.Component {
         <Route path="/view">
           <Cuboid image={this.state.image} />
           <Link href="/" className="capture-link link-left">
-            <img src="/arrow-left.png" height="50" width="50" alt="capture" />
+            <img src="/arrow-left.png"  alt="arrow" />
           </Link>
         </Route>
       </div>
