@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -41,9 +42,37 @@
   border-radius: 50%;
   transition: all 0.3s ease;
 }
-.capture-button:hover{
-  box-shadow: 2px 0px 24px -5px rgba(35,55,75,0.75);
+.capture-link{
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #fff;
+  outline: none;
+  padding: 10px 12px;
+  font-family: monospace;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  bottom: 50%;
+  margin: 12px;
+  border: none;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.link-right{
+  right: 5px;
+}
+.link-left{
+  left: 5px;
+}
+.capture-button:hover, .link-right:hover{
+  box-shadow: 0px 0px 27px -5px rgba(28, 46, 63, 0.75);
   padding: 12px 14px;
+}
+.link-left:hover{
+  box-shadow: 0px 0px 30px -5px rgba(70, 106, 139, 0.75);
+  padding: 12px 14px;
+}
+#my-canvas{
+  height: 100vh;width: 100vw;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

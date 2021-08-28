@@ -11,9 +11,9 @@ class Map extends React.Component {
     this.mapContainer = React.createRef();
   }
   state = {
-    long: -74.9,
-    lat: 42.35,
-    zoom: 9,
+    long: 77.0927,
+    lat: 28.6442 ,
+    zoom: 5,
   };
 
   componentDidMount() {

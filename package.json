@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babylonjs/core": "^4.2.0",
     "@mapbox/mapbox-gl-geocoder": "^4.7.3",
     "dotenv": "^10.0.0",
     "mapbox-gl": "^2.4.1",
