@@ -23,6 +23,7 @@ class Map extends React.Component {
       style: "mapbox://styles/mapbox/streets-v11",
       center: [long, lat],
       zoom: zoom,
+      preserveDrawingBuffer: true
     });
     map.on("move", () => {
       this.setState({
@@ -45,7 +46,7 @@ class Map extends React.Component {
           Longitude: {this.state.long} | Latitude: {this.state.lat} | Zoom:{" "}
           {this.state.zoom}
         </div>
-        <div ref={this.mapContainer} className="map-container" />
+        <div ref={this.mapContainer} className="map-container" id="map"/>
       </div>
     );
   }

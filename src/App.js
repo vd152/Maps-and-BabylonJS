@@ -4,25 +4,56 @@ import "./App.css";
 import Route from "./components/Route";
 import Cuboid from "./components/BabylonJS/Cuboid";
 import Link from "./components/Link";
-
-function App() {
-  return (
-    <div className="App">
-      <Route path="/">
-        <React.Fragment>
-          <Map />
-          <button className="capture-button">
-            <img src="/captureWhite.png" height="50" width="50" alt="capture" />
-          </button>
-          <Link href="/abc" className="capture-link link-right"><img src="/arrow-right.png" height="50" width="50" alt="capture" /></Link>
-        </React.Fragment>
-      </Route>
-      <Route path="/abc">
-        <Cuboid/>
-        <Link href="/" className="capture-link link-left"><img src="/arrow-left.png" height="50" width="50" alt="capture" /></Link>
-      </Route>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    image: "/arrow-right.png",
+  };
+  capture = () => {
+    var c = document.getElementsByClassName("mapboxgl-canvas")[0];
+    this.setState({ image: c.toDataURL("image/png") }, () => {
+      window.history.pushState({}, "", "/view");
+      const navEvent = new PopStateEvent("popstate");
+      window.dispatchEvent(navEvent);
+    });
+  };
+  render() {
+    return (
+      <div className="App">
+        <Route path="/">
+          <React.Fragment>
+            <Map />
+            <button
+              className="capture-button"
+              onClick={(e) => {
+                this.capture();
+              }}
+            >
+              <img
+                src="/captureWhite.png"
+                height="50"
+                width="50"
+                alt="capture"
+              />
+            </button>
+            <Link href="/view" className="capture-link link-right">
+              <img
+                src="/arrow-right.png"
+                height="50"
+                width="50"
+                alt="capture"
+              />
+            </Link>
+          </React.Fragment>
+        </Route>
+        <Route path="/view">
+          <Cuboid image={this.state.image} />
+          <Link href="/" className="capture-link link-left">
+            <img src="/arrow-left.png" height="50" width="50" alt="capture" />
+          </Link>
+        </Route>
+      </div>
+    );
+  }
 }
 
 export default App;
